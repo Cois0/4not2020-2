@@ -24,6 +24,24 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+const cliente = require('./routes/cliente')
+app.use('/cliente', cliente)
+
+const lavador = require('./routes/lavador')
+app.use('/lavador', lavador)
+
+const entregador = require('./routes/entregador')
+app.use('/entregador', entregador)
+
+const pedido = require('./routes/pedido')
+app.use('/pedido', pedido)
+
+const maquina_lavar = require('./routes/maquina_lavar')
+app.use('/maquina_lavar', maquina_lavar)
+
+const prancha_passar = require('./routes/prancha_passar')
+app.use('/prancha_passar', prancha_passar)
+
 const curso = require('./routes/curso')
 app.use('/curso', curso)
 
@@ -35,4 +53,6 @@ app.use('/sala-aula', sala_aula)
 
 const turma = require('./routes/turma')
 app.use('/turma', turma)
+
+
 module.exports = app;
