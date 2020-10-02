@@ -7,7 +7,11 @@ const esquema = mongoose.Schema({
     data_entrega: {type: Date, required: true },
     horario_coleta: { type: String, required:true },
     horario_entrega: {type: String, required: true}, 
-    cliente: { type: mongoose.ObjectId, ref: 'Cliente', required: true }
+    cliente: { type: mongoose.ObjectId, ref: 'Cliente', required: true },
+    entregador: { type: mongoose.ObjectId, ref: 'Entregador', required: true },
+    lavador: { type: mongoose.ObjectId, ref: 'Lavador', required: true },
+    prancha_passar: { type: mongoose.ObjectId, ref: 'PranchaPassar', required: true },
+    maquina_lavar: { type: mongoose.ObjectId, ref: 'MaquinaLavar', required: true }
 })
 /*
 Parâmetros do método mongoose.model()

@@ -11,7 +11,6 @@ const esquema = mongoose.Schema({
     telefone: { type: String, required: true },
     //Índice único impede duplicidade de emails no cadastro
     email: { type: String, required: true, index: {unique: true} },
-    pedido: { type: mongoose.ObjectId, ref: 'Pedido', required: true }
 
 })
 /*

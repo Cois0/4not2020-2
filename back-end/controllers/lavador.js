@@ -52,8 +52,6 @@ controller.listar = async (req, res) => {
     try{
     //traz todos os cursos cadastrados
     let dados = await Lavador.find()
-        .populate('maquina_lavar') 
-        .populate('prancha_passar')
     res.send(dados) // Vai com status http 200
     }
     catch(erro){

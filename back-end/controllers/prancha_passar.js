@@ -52,7 +52,6 @@ controller.listar = async (req, res) => {
     try{
     //traz todos os cursos cadastrados
     let dados = await PranchaPassar.find()
-        .populate('pedido') 
     res.send(dados) // Vai com status http 200
     }
     catch(erro){

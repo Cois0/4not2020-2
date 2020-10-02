@@ -3,7 +3,6 @@ const mongoose = require('mongoose')
 const esquema = mongoose.Schema({
    numero: {type: Number, required: true, index:{unique: true}},
    modelo: {type: String, required: true},
-   pedido: { type: mongoose.ObjectId, ref: 'Pedido', required: true}
 })
 /*
 Parâmetros do método mongoose.model()
