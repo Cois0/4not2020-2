@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CursoListComponent } from './curso/curso-list/curso-list.component';
+import { PedidoListComponent } from './pedido/pedido-list/pedido-list.component';
 
 const routes: Routes = [
     //nomes de rota no Angular (path) não começam com barra
-    { path: 'curso', component: CursoListComponent }
+    { path: 'pedido', component: PedidoListComponent }
 
 ];
 

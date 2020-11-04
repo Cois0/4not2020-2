@@ -16,7 +16,6 @@ db(`mongodb+srv://coiso:Nuk3m3s3npa1@cluster0.qx3sz.gcp.mongodb.net/lavanderia?r
 var app = express();
 
 //Habilita a chamada do back-end a partir de um servidor distinto
-
 const cors = require('cors')
 app.use(cors())
 

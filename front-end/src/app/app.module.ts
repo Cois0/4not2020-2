@@ -9,7 +9,7 @@ import { MainToolbarComponent } from './ui/main-toolbar/main-toolbar.component';
 import { MainFooterComponent } from './ui/main-footer/main-footer.component';
 import { MainMenuComponent } from './ui/main-menu/main-menu.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CursoListComponent } from './curso/curso-list/curso-list.component';
+import { PedidoListComponent } from './pedido/pedido-list/pedido-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { CursoListComponent } from './curso/curso-list/curso-list.component';
     MainToolbarComponent,
     MainFooterComponent,
     MainMenuComponent,
-    CursoListComponent
+    PedidoListComponent
   ],
   imports: [
     BrowserModule,
