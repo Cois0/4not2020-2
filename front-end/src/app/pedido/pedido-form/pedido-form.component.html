@@ -1,0 +1,27 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form">
+<mat-form-field>
+    <mat-label>Número do Pedido</mat-label>
+    <input matInput placeholder="Informe o número do pedido" 
+    [(ngModel)]="pedido.num_pedido" name="num_pedido" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Numero de peças</mat-label>
+    <input matInput type="number" [(ngModel)]="pedido.qtd_pecas" 
+    name="qtd_pecas" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Data da coleta</mat-label>
+    <input matInput type="date" [(ngModel)]="pedido.data_coleta" 
+    name="data_coleta" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Data da entrega</mat-label>
+    <input matInput type="date" [(ngModel)]="pedido.data_entrega" 
+    name="data_entrega" required>
+  </mat-form-field>
+</form>

@@ -15,6 +15,8 @@ import { MainFooterComponent } from './ui/main-footer/main-footer.component';
 import { MainMenuComponent } from './ui/main-menu/main-menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PedidoListComponent } from './pedido/pedido-list/pedido-list.component';
+import { PedidoFormComponent } from './pedido/pedido-form/pedido-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,14 +24,16 @@ import { PedidoListComponent } from './pedido/pedido-list/pedido-list.component'
     MainToolbarComponent,
     MainFooterComponent,
     MainMenuComponent,
-    PedidoListComponent
+    PedidoListComponent,
+    PedidoFormComponent
   ],
   imports: [
     BrowserModule,
     MaterialModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
