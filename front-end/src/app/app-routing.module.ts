@@ -7,7 +7,7 @@ const routes: Routes = [
     //nomes de rota no Angular (path) não começam com barra
     { path: 'pedido', component: PedidoListComponent },
     { path: 'pedido/novo', component: PedidoFormComponent },
-    { path: 'pedido:id', component: PedidoFormComponent }
+    { path: 'pedido/:id', component: PedidoFormComponent }
 
 ];
 

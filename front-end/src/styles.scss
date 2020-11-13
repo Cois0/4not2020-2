@@ -54,3 +54,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         margin-right: 30px;
     }
 }
+.form-buttons{
+    background: transparent;
+    mat-toolbar-row{
+        display: flex;
+        justify-content: space-around;
+    }
+}
