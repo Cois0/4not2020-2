@@ -14,28 +14,69 @@
 
   <!-- Numero Column -->
   <ng-container matColumnDef="num_pedido">
-    <th mat-header-cell *matHeaderCellDef> Número </th>
-    <td mat-cell *matCellDef="let pedido"> {{ pedido.num_pedido }} </td>
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Número </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let pedido"> {{ pedido.num_pedido }} </td>
   </ng-container>
 
   <!-- Pecas Column -->
   <ng-container matColumnDef="qtd_pecas">
-    <th mat-header-cell *matHeaderCellDef> Peças </th>
-    <td mat-cell *matCellDef="let pedido"> {{ pedido.qtd_pecas }} </td>
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Peças </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let pedido"> {{ pedido.qtd_pecas }} </td>
   </ng-container>
 
-   <!-- Coleta Column -->
+   <!-- DataColeta Column -->
   <ng-container matColumnDef="data_coleta">
-    <th mat-header-cell *matHeaderCellDef> Coleta </th>
-    <td mat-cell *matCellDef="let pedido"> {{ pedido.data_coleta }} </td>
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Data da coleta </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let pedido"> {{ pedido.data_coleta }} </td>
   </ng-container>
 
- <!-- Entrega Column -->
+ <!-- DataEntrega Column -->
   <ng-container matColumnDef="data_entrega">
-    <th mat-header-cell *matHeaderCellDef> Entrega </th>
-    <td mat-cell *matCellDef="let pedido"> {{ pedido.data_entrega }} </td>
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Data da entrega </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let pedido"> {{ pedido.data_entrega }} </td>
   </ng-container>
 
+<!-- HorarioColeta Column -->
+  <ng-container matColumnDef="horario_coleta">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Horário da coleta </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let pedido"> {{ pedido.horario_coleta }} </td>
+  </ng-container>
+
+<!-- HorarioEntrega Column -->
+  <ng-container matColumnDef="horario_entrega">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Horário da entrega </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let pedido"> {{ pedido.horario_entrega }} </td>
+  </ng-container>
+
+<!-- Cliente Column -->
+  <ng-container matColumnDef="cliente">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Cliente </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let pedido"> {{ pedido.cliente?.nome }} </td>
+  </ng-container>
+
+<!-- Entregador Column -->
+  <ng-container matColumnDef="entregador">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Entregador </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let pedido"> {{ pedido.entregador?.nome }} </td>
+  </ng-container>
+
+<!-- Lavador Column -->
+  <ng-container matColumnDef="lavador">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Lavador </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let pedido"> {{ pedido.lavador?.nome }} </td>
+  </ng-container>
+
+<!-- MaquinaLavar Column -->
+  <ng-container matColumnDef="maquina_lavar">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Maquina de Lavar </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let pedido"> {{ pedido.maquina_lavar?.numero }} </td>
+  </ng-container>
+
+<!-- PranchaPassar Column -->
+  <ng-container matColumnDef="prancha_passar">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Prancha de Passar </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let pedido"> {{ pedido.prancha_passar?.numero }} </td>
+  </ng-container>
 
 <!-- Editar Column -->
   <ng-container matColumnDef="editar">

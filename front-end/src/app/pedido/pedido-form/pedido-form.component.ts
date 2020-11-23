@@ -4,6 +4,11 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {​​​​ Location }​​​​ from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { ClienteService } from 'src/app/cliente/cliente.service';
+import { EntregadorService } from 'src/app/entregador/entregador.service';
+import { LavadorService } from 'src/app/lavador/lavador.service';
+import { MaquinaLavarService } from 'src/app/maquina_lavar/maquina-lavar.service';
+import { PranchaPassarService } from 'src/app/prancha_passar/prancha-passar.service';
 
 @Component({
   selector: 'app-pedido-form',
@@ -18,8 +23,21 @@ export class PedidoFormComponent implements OnInit {
   
   title : string = 'Novo pedido'
 
+  //variaveis para armazenar as listagens de objetos relacionados
+  clientes : any = [] //vetor vazio, nome no plural
+  entregadores : any = []
+  lavadores : any = []
+  maquinasLavar : any = []
+  pranchasPassar : any = []
   constructor(
     private pedidoSrv : PedidoService,
+    //services das entidades relacionadas
+    private clienteSrv: ClienteService,
+    private entregadorSrv: EntregadorService,
+    private lavadorSrv: LavadorService,
+    private maquinaLavarSrv: MaquinaLavarService,
+    private pranchaPassarSrv: PranchaPassarService,
+
     private snackBar : MatSnackBar,
     private location: Location,
     private actRoute : ActivatedRoute
@@ -40,6 +58,22 @@ export class PedidoFormComponent implements OnInit {
         this.snackBar.open('ERRO: Não foi possível carregar os dados para edição.',
         'Que Pena =/', { duration: 5000 })
       }
+    }
+    // carrega as listagens dos dados relacionados
+    this.carregarDados()
+  }
+
+  async carregarDados() {
+    try{
+      this.clientes = await this.clienteSrv.listar()
+      this.entregadores = await this.entregadorSrv.listar()
+      this.lavadores = await this.lavadorSrv.listar()
+      this.maquinasLavar = await this.maquinaLavarSrv.listar()
+      this.pranchasPassar = await this.pranchaPassarSrv.listar()
+    }
+    catch(erro) {
+      console.log(erro)
+      this.snackBar.open('ERRO: não foi possível carregar os dados necessários para a página.', 'Que Pena =/', { duration: 5000 })
     }
   }
 

@@ -1,35 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { PedidoService } from '../pedido.service';
+import { ClienteService } from '../cliente.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-pedido-list',
-  templateUrl: './pedido-list.component.html',
-  styleUrls: ['./pedido-list.component.scss']
+  selector: 'app-cliente-list',
+  templateUrl: './cliente-list.component.html',
+  styleUrls: ['./cliente-list.component.scss']
 })
-export class PedidoListComponent implements OnInit {
+export class ClienteListComponent implements OnInit {
 
   // Nome da entidade no plural
-  pedidos : any = []
+  clientes : any = []
 
   // Quais colunas serão exibidas na tabela, e em qual ordem
-  displayedColumns: string[] = ['num_pedido', 'qtd_pecas', 'data_coleta', 'data_entrega', 'horario_coleta', 'horario_entrega','cliente', 'entregador', 'lavador', 'maquina_lavar', 'prancha_passar', 'editar', 'excluir']
+  displayedColumns: string[] = ['nome', 'editar', 'excluir']
 
   // Injeção de dependência ou inversão de controle
   constructor(
-      private pedidoSrv : PedidoService,
+      private clienteSrv : ClienteService,
       private snackBar : MatSnackBar
   ) { }
 
   async ngOnInit() {
-    this.pedidos = await this.pedidoSrv.listar()
-    console.log(this.pedidos)
+    this.clientes = await this.clienteSrv.listar()
+    console.log(this.clientes)
   }
 
   async excluir(id: string) {
     if(confirm('Deseja realmente excluir?')) {
       try {
-        await this.pedidoSrv.excluir(id)
+        await this.clienteSrv.excluir(id)
         // 1) Recarregar os dados da tabela
         this.ngOnInit()
         // 2) Dar feedback para o usuário com mensagem

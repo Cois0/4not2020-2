@@ -13,16 +13,80 @@
     name="qtd_pecas" required>
   </mat-form-field>
 
+
   <mat-form-field>
-    <mat-label>Data da coleta</mat-label>
-    <input matInput type="date" [(ngModel)]="pedido.data_coleta" 
-    name="data_coleta">
+    <mat-label>Data de coleta</mat-label>
+    <input matInput [matDatepicker]="dataColeta" name="data_coleta"
+    [(ngModel)]="pedido.data_coleta" placeholder="Informe a data de coleta"
+    required>
+    <mat-datepicker-toggle matSuffix [for]="dataColeta"></mat-datepicker-toggle>
+    <mat-datepicker #dataColeta></mat-datepicker>
   </mat-form-field>
 
   <mat-form-field>
-    <mat-label>Data da entrega</mat-label>
-    <input matInput type="date" [(ngModel)]="pedido.data_entrega" 
-    name="data_entrega">
+    <mat-label>Data de entrega</mat-label>
+    <input matInput [matDatepicker]="dataEntrega" name="data_entrega"
+    [(ngModel)]="pedido.data_entrega" placeholder="Informe a data de coleta"
+    required>
+    <mat-datepicker-toggle matSuffix [for]="dataEntrega"></mat-datepicker-toggle>
+    <mat-datepicker #dataEntrega></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Horário da coleta</mat-label>
+    <input matInput type="string" [(ngModel)]="pedido.horario_coleta" 
+    name="horario_coleta">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Horário da enterga</mat-label>
+    <input matInput type="string" [(ngModel)]="pedido.horario_entrega" 
+    name="horario_entrega">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Cliente</mat-label>
+    <mat-select [(ngModel)]="pedido.cliente" name="cliente" required>
+      <mat-option *ngFor="let cliente of clientes" [value]="cliente._id">
+      {{ cliente.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Entregador</mat-label>
+    <mat-select [(ngModel)]="pedido.entregador" name="entregador" required>
+      <mat-option *ngFor="let entregador of entregadores" [value]="entregador._id">
+      {{ entregador.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+<mat-form-field>
+    <mat-label>Lavador</mat-label>
+    <mat-select [(ngModel)]="pedido.lavador" name="lavador" required>
+      <mat-option *ngFor="let lavador of lavadores" [value]="lavador._id">
+      {{ lavador.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+<mat-form-field>
+    <mat-label>Máquina de lavar</mat-label>
+    <mat-select [(ngModel)]="pedido.maquina_lavar" name="maquina_lavar" required>
+      <mat-option *ngFor="let maquina of maquinasLavar" [value]="maquina._id">
+      {{ maquina.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+<mat-form-field>
+    <mat-label>Prancha de Passar</mat-label>
+    <mat-select [(ngModel)]="pedido.prancha_passar" name="prancha_passar" required>
+      <mat-option *ngFor="let prancha of pranchasPassar" [value]="prancha._id">
+      {{ prancha.nome }}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
 
   <mat-toolbar class="form-buttons">
