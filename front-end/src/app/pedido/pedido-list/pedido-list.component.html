@@ -27,13 +27,13 @@
    <!-- DataColeta Column -->
   <ng-container matColumnDef="data_coleta">
     <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Data da coleta </th>
-    <td mat-cell class="cell-align-center" *matCellDef="let pedido"> {{ pedido.data_coleta }} </td>
+    <td mat-cell class="cell-align-center" *matCellDef="let pedido"> {{ pedido.data_coleta | date:'dd/MM/yyyy' }} </td>
   </ng-container>
 
  <!-- DataEntrega Column -->
   <ng-container matColumnDef="data_entrega">
     <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Data da entrega </th>
-    <td mat-cell class="cell-align-center" *matCellDef="let pedido"> {{ pedido.data_entrega }} </td>
+    <td mat-cell class="cell-align-center" *matCellDef="let pedido"> {{ pedido.data_entrega | date:'dd/MM/yyyy'}} </td>
   </ng-container>
 
 <!-- HorarioColeta Column -->

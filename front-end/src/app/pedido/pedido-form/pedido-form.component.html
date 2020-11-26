@@ -13,7 +13,6 @@
     name="qtd_pecas" required>
   </mat-form-field>
 
-
   <mat-form-field>
     <mat-label>Data de coleta</mat-label>
     <input matInput [matDatepicker]="dataColeta" name="data_coleta"
@@ -35,13 +34,13 @@
   <mat-form-field>
     <mat-label>Horário da coleta</mat-label>
     <input matInput type="string" [(ngModel)]="pedido.horario_coleta" 
-    name="horario_coleta">
+    name="horario_coleta" required mask="00:00" [dropSpecialCharacters]="false">
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Horário da enterga</mat-label>
     <input matInput type="string" [(ngModel)]="pedido.horario_entrega" 
-    name="horario_entrega">
+    name="horario_entrega" required mask="00:00" [dropSpecialCharacters]="false">
   </mat-form-field>
 
   <mat-form-field>
@@ -73,18 +72,18 @@
 
 <mat-form-field>
     <mat-label>Máquina de lavar</mat-label>
-    <mat-select [(ngModel)]="pedido.maquina_lavar" name="maquina_lavar" required>
+    <mat-select [(ngModel)]="pedido.maquina_lavar" name="maquina_lavar">
       <mat-option *ngFor="let maquina of maquinasLavar" [value]="maquina._id">
-      {{ maquina.nome }}
+      {{ maquina.numero }}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
 <mat-form-field>
     <mat-label>Prancha de Passar</mat-label>
-    <mat-select [(ngModel)]="pedido.prancha_passar" name="prancha_passar" required>
+    <mat-select [(ngModel)]="pedido.prancha_passar" name="prancha_passar">
       <mat-option *ngFor="let prancha of pranchasPassar" [value]="prancha._id">
-      {{ prancha.nome }}
+      {{ prancha.numero }}
       </mat-option>
     </mat-select>
   </mat-form-field>

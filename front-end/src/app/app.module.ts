@@ -1,3 +1,7 @@
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+ 
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
+
 import { MaterialModule } from './material/material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,7 +12,7 @@ import localePt from '@angular/common/locales/pt';
 registerLocaleData(localePt);
 
 /*****/
-import { MatMomentDateModule, MAT_MOMENT_DATE_FORMATS } from '@angular/material-moment-adapter';
+import { MatMomentDateModule, MAT_MOMENT_DATE_FORMATS, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 import { MAT_DATE_LOCALE, MAT_DATE_FORMATS } from '@angular/material/core';
 /*****/
 
@@ -49,7 +53,8 @@ import { PranchaPassarListComponent } from './prancha_passar/prancha-passar-list
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    MatMomentDateModule
+    MatMomentDateModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [
 /**** Datas em português no MatDatepicker  ****/
