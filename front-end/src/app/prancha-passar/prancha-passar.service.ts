@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class PranchaPassarService {
 
   private apiServer : string = environment.apiServer
-  private apiUri : string = this.apiServer + 'prancha_passar'
+  private apiUri : string = this.apiServer + 'prancha-passar'
   
   constructor(private http: HttpClient) { }
 

@@ -1,1 +1,86 @@
-<p>lavador-list works!</p>
+<h1>Dados do Lavador</h1>
+
+<mat-toolbar class="new-item">
+    <a mat-raised-button collor="accent" [routerLink]="['/lavador/novo']">
+        <mat-icon>add_circle</mat-icon>
+        Novo lavador
+    </a>
+</mat-toolbar>
+
+<table mat-table [dataSource]="lavadores" class="mat-elevation-z4">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Nome Column -->
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Nome </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let lavador"> {{ lavador.nome }} </td>
+  </ng-container>
+
+  <!-- DataNasc Column -->
+  <ng-container matColumnDef="data_nascimento">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Data de Nascimento </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let lavador"> {{ lavador.data_nascimento | date:'dd/MM/yyyy' }} </td>
+  </ng-container>
+
+  <!-- CPF Column -->
+  <ng-container matColumnDef="cpf">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> CPF </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let lavador"> {{ lavador.cpf }} </td>
+  </ng-container>
+
+  <!-- RG Column -->
+  <ng-container matColumnDef="rg">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> RG </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let lavador"> {{ lavador.rg }} </td>
+  </ng-container>
+
+  <!-- Salário Column -->
+  <ng-container matColumnDef="salario">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Salario </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let lavador"> {{ lavador.salario }} </td>
+  </ng-container>
+
+  <!-- Endereço Column -->
+  <ng-container matColumnDef="endereco">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Endereço </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let lavador"> {{ lavador.endereco }} </td>
+  </ng-container>
+
+  <!-- Telefone Column -->
+  <ng-container matColumnDef="telefone">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Telefone </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let lavador"> {{ lavador.telefone }} </td>
+  </ng-container>
+
+  <!-- Email Column -->
+  <ng-container matColumnDef="email">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Email </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let lavador"> {{ lavador.email }} </td>
+  </ng-container>
+
+  <!-- Editar Column -->
+    <ng-container matColumnDef="editar">
+      <th mat-header-cell class="cell-align-center" *matHeaderCellDef>Editar</th>
+      <td mat-cell class="cell-align-center" *matCellDef="let lavador">
+          <a mat-raised-button color="accent" title="Editar" 
+              [routerLink]="['/lavador', lavador._id]">
+              <mat-icon>edit</mat-icon>
+          </a>
+      </td>
+    </ng-container>
+
+  <!-- Excluir Column -->
+    <ng-container matColumnDef="excluir">
+      <th mat-header-cell class="cell-align-center" *matHeaderCellDef>Excluir</th>
+      <td mat-cell class="cell-align-center" *matCellDef="let lavador">
+          <button mat-raised-button color="warn" title="Excluir" (click)="excluir(lavador._id)">
+              <mat-icon>delete_forever</mat-icon>
+          </button>
+      </td>
+    </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

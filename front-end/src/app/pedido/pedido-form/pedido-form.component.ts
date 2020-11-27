@@ -7,8 +7,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ClienteService } from 'src/app/cliente/cliente.service';
 import { EntregadorService } from 'src/app/entregador/entregador.service';
 import { LavadorService } from 'src/app/lavador/lavador.service';
-import { MaquinaLavarService } from 'src/app/maquina_lavar/maquina-lavar.service';
-import { PranchaPassarService } from 'src/app/prancha_passar/prancha-passar.service';
+import { MaquinaLavarService } from 'src/app/maquina-lavar/maquina-lavar.service';
+import { PranchaPassarService } from 'src/app/prancha-passar/prancha-passar.service';
 
 @Component({
   selector: 'app-pedido-form',

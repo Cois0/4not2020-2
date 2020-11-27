@@ -29,8 +29,12 @@ import { FormsModule } from '@angular/forms';
 import { ClienteListComponent } from './cliente/cliente-list/cliente-list.component';
 import { EntregadorListComponent } from './entregador/entregador-list/entregador-list.component';
 import { LavadorListComponent } from './lavador/lavador-list/lavador-list.component';
-import { MaquinaLavarListComponent } from './maquina_lavar/maquina-lavar-list/maquina-lavar-list.component';
-import { PranchaPassarListComponent } from './prancha_passar/prancha-passar-list/prancha-passar-list.component';
+import { PranchaPassarListComponent } from './prancha-passar/prancha-passar-list/prancha-passar-list.component';
+import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.component';
+import { EntregadorFormComponent } from './entregador/entregador-form/entregador-form.component';
+import { LavadorFormComponent } from './lavador/lavador-form/lavador-form.component';
+import { MaquinaLavarListComponent } from './maquina-lavar/maquina-lavar-list/maquina-lavar-list.component';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +48,11 @@ import { PranchaPassarListComponent } from './prancha_passar/prancha-passar-list
     EntregadorListComponent,
     LavadorListComponent,
     MaquinaLavarListComponent,
-    PranchaPassarListComponent
+    PranchaPassarListComponent,
+    ClienteFormComponent,
+    EntregadorFormComponent,
+    LavadorFormComponent,
+    
   ],
   imports: [
     BrowserModule,
