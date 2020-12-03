@@ -1,1 +1,66 @@
-<p>lavador-form works!</p>
+<h1>{{ title }}</h1>
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+  <mat-form-field>
+    <mat-label>Nome do Lavador</mat-label>
+    <input matInput placeholder="Informe o nome do lavador" 
+    [(ngModel)]="lavador.nome" name="nome" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Data de nascimento</mat-label>
+    <input matInput [matDatepicker]="dataNascimento" name="data_nascimento"
+    [(ngModel)]="lavador.data_nascimento" placeholder="Informe a data de nascimento"
+    required>
+    <mat-datepicker-toggle matSuffix [for]="dataNascimento"></mat-datepicker-toggle>
+    <mat-datepicker #dataNascimento></mat-datepicker>
+  </mat-form-field>
+
+ <mat-form-field>
+    <mat-label>CPF</mat-label>
+    <input matInput type="string" [(ngModel)]="lavador.cpf" 
+    name="cpf" required mask="000.000.000-00" [dropSpecialCharacters]="false" required>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>RG</mat-label>
+    <input matInput type="string" [(ngModel)]="lavador.rg" 
+    name="rg" required mask="00.000.000-0" [dropSpecialCharacters]="false">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Salário</mat-label>
+    <input matInput type="number" [(ngModel)]="lavador.salario" 
+    name="salario">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Endereço</mat-label>
+    <input matInput type="string" [(ngModel)]="lavador.endereco" 
+    name="endereco" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Telefone</mat-label>
+    <input matInput type="string" [(ngModel)]="lavador.telefone" 
+    name="telefone" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput type="string" [(ngModel)]="lavador.email" 
+    name="email" required>
+  </mat-form-field>
+
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+        <button mat-raised-button type="submit" color="accent">
+            Salvar
+        </button>
+        <button mat-raised-button type="button" (click)="voltar(f)">
+            Voltar
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+</form>

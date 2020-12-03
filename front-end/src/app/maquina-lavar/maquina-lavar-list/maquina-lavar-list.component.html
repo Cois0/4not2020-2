@@ -44,8 +44,8 @@
 <!-- Excluir Column -->
   <ng-container matColumnDef="excluir">
     <th mat-header-cell class="cell-align-center" *matHeaderCellDef>Excluir</th>
-    <td mat-cell class="cell-align-center" *matCellDef="let maquina-lavar">
-        <button mat-raised-button color="warn" title="Excluir" (click)="excluir(maquina-lavar._id)">
+    <td mat-cell class="cell-align-center" *matCellDef="let maquinaLavar">
+        <button mat-raised-button color="warn" title="Excluir" (click)="excluir(maquinaLavar._id)">
             <mat-icon>delete_forever</mat-icon>
         </button>
     </td>

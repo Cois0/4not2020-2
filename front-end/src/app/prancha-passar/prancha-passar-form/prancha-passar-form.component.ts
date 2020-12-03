@@ -1,38 +1,38 @@
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ClienteService } from '../cliente.service';
+import { PranchaPassarService } from '../prancha-passar.service';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-cliente-form',
-  templateUrl: './cliente-form.component.html',
-  styleUrls: ['./cliente-form.component.scss']
+  selector: 'app-prancha-passar-form',
+  templateUrl: './prancha-passar-form.component.html',
+  styleUrls: ['./prancha-passar-form.component.scss']
 })
-export class ClienteFormComponent implements OnInit {
+export class PranchaPassarFormComponent implements OnInit {
 
   // Variável para armazenar os dados do registro
-  cliente : any = {}  // Objeto vazio, nome no SINGULAR
+  pranchaPassar : any = {}  // Objeto vazio, nome no SINGULAR
 
-  title : string = 'Novo cliente'
+  title : string = 'Novo prancha-passar'
 
   constructor(
-    private clienteSrv : ClienteService,
+    private pranchaPassarSrv : PranchaPassarService,
     private snackBar : MatSnackBar,
     private location : Location,
     private actRoute : ActivatedRoute
   ) { }
 
   async ngOnInit() {
-    console.log(this.actRoute.snapshot.params['id'])// Verifica se existe o parâmetro id na URL (rota)
+    // Verifica se existe o parâmetro id na URL (rota)
     if(this.actRoute.snapshot.params['id']) {
       try {
         // 1) Acionar o back-end para buscar esse registro
         // e disponibilizá-lo para edição        
-        this.cliente = await this.clienteSrv.obterUm(this.actRoute.snapshot.params['id'])
+        this.pranchaPassar = await this.pranchaPassarSrv.obterUm(this.actRoute.snapshot.params['id'])
         // 2) Mudar o título da página
-        this.title = 'Editando cliente'
+        this.title = 'Editando prancha-passar'
       }
       catch(erro) {
         console.log(erro)
@@ -46,13 +46,13 @@ export class ClienteFormComponent implements OnInit {
     if(form.valid) {
       try {
         // 1) Salvar os dados no back-end
-        // Se o cliente já existir (caso de edição), ele já terá
+        // Se o prancha-passar já existir (caso de edição), ele já terá
         // o atributo _id
-        if(this.cliente._id) {
-          await this.clienteSrv.atualizar(this.cliente) // Atualização
+        if(this.pranchaPassar._id) {
+          await this.pranchaPassarSrv.atualizar(this.pranchaPassar) // Atualização
         }
         else {
-          await this.clienteSrv.novo(this.cliente)
+          await this.pranchaPassarSrv.novo(this.pranchaPassar)
         }
         // 2) Dar o feedback para o usuário
         this.snackBar.open('Dados salvos com sucesso.', 'Entendi',
@@ -78,7 +78,5 @@ export class ClienteFormComponent implements OnInit {
     }
 
     if(result) this.location.back()
-
   }
-
-}
+}  

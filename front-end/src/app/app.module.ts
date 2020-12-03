@@ -34,6 +34,8 @@ import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.compon
 import { EntregadorFormComponent } from './entregador/entregador-form/entregador-form.component';
 import { LavadorFormComponent } from './lavador/lavador-form/lavador-form.component';
 import { MaquinaLavarListComponent } from './maquina-lavar/maquina-lavar-list/maquina-lavar-list.component';
+import { MaquinaLavarFormComponent } from './maquina-lavar/maquina-lavar-form/maquina-lavar-form.component';
+import { PranchaPassarFormComponent } from './prancha-passar/prancha-passar-form/prancha-passar-form.component';
 
 
 @NgModule({
@@ -52,6 +54,8 @@ import { MaquinaLavarListComponent } from './maquina-lavar/maquina-lavar-list/ma
     ClienteFormComponent,
     EntregadorFormComponent,
     LavadorFormComponent,
+    MaquinaLavarFormComponent,
+    PranchaPassarFormComponent,
     
   ],
   imports: [

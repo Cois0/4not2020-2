@@ -68,7 +68,7 @@ controller.obterUm = async (req, res) => {
 
     //O objeto existe e foi encontrado
     if(obj) res.send(obj) //http 200
-    else res. status(404).end() //http: 404 not found
+    else res.status(404).end() //http: 404 not found
     }
     catch(erro) {
         console.log(erro)
